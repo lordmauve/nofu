@@ -11,7 +11,7 @@ questions = [{
     'red_herrings': [
         '5',
         '10',
-        '20',
+        '12',
         '25',
         '50',
         '120',
@@ -33,8 +33,11 @@ def answer(id):
         abort(404)
 
     answer = request.args['a']
-    return render_template('answer.html', question=question,
-                           is_correct=(answer == question['answer']))
+    return render_template(
+        'answer.html', question=question,
+        given=answer,
+        is_correct=(answer == question['answer'])
+    )
 
 
 @app.route('/q/<int:id>/')

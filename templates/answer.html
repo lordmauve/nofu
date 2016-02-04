@@ -2,11 +2,12 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <p>{{question.question}}</p>
+    <p id="question">{{question.question}}</p>
     {% if is_correct %}
-       <p>congrats</p>
+       <p class="answer correct"><strong>{{question.answer}}</strong> is correct!</p>
     {% else %}
-       <p>fail. The correct answer is <strong>{{question.answer}}</strong>!</p>
+        <p>You chose <strong>{{given}}</strong>.</p>
+        <p class="answer wrong">The correct answer is <strong>{{question.answer}}</strong>!</p>
     {% endif %}
-    <p><a href="/">Next question!</a></p>
+    <p><a class="btn" href="/">Next question!</a></p>
 {% endblock %}
