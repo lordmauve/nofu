@@ -2,6 +2,20 @@
 {% extends "index.html" %}
 
 {% block content %}
+
+<script>
+var score = (window.localStorage.score) ? JSON.parse(window.localStorage.score) || 0: 0;
+</script>
+{% if is_correct %}
+<script>
+score++;
+window.localStorage.score = JSON.stringify(score);
+</script>
+{% endif %}
+<script>
+document.write('<h2>Score: ' + score + '</h2>');
+</script>
+
     <p id="question">{{question.question}}</p>
     {% if is_correct %}
        <p class="answer correct"><strong>{{question.answer}}</strong> is correct!</p>
@@ -11,3 +25,4 @@
     {% endif %}
     <p><a class="btn" href="/">Next question!</a></p>
 {% endblock %}
+
