@@ -1,10 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Hello world</title>
+        <title>No-Fu!</title>
+<style>
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: #A00;
+}
+
+.answer {
+    text-align: center;
+}
+
+.btn {
+    padding: 0.3em 0.5em;
+    border: solid silver 1px;
+    background-color: #eee;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    font-size: 30pt;
+    line-height: 30pt;
+    display: inline-block;
+}
+
+.btn:hover {
+    border-color: #cce;
+    background-color: #eef;
+}
+
+body {
+    width: 30em;
+    text-align: center;
+    margin: 4em auto 0;
+    font-size: 26pt;
+}
+
+h1 {
+    position: absolute;
+    left: 1em;
+    top: 0.5em;
+    margin: 0;
+    padding: 0;
+    color: silver;
+}
+
+#answer {
+    margin-bottom: 2em;
+}
+
+#answers li {
+    list-style: none;
+    padding: 0;
+    margin: 1em;
+}
+</style>
     </head>
     <body>
-        <h1>Hello world!</h1>
+        <h1>No-fu!</h1>
         {% block content %}{% endblock %}
     </body>
 </html>
