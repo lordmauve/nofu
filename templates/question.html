@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <p>{{question}}</p>
+    <ul>
+        {% for a in answers %}
+            <li><a href="/a/{{id}}/?a={{a}}">{{a}}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
