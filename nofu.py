@@ -1,4 +1,5 @@
 import random
+import json
 from flask import Flask, render_template, abort, redirect, request
 
 
@@ -16,7 +17,7 @@ questions = [{
         '50',
         '120',
     ]
-}]
+}] + json.load(open('disney_answers.json'))
 
 
 @app.route('/')
